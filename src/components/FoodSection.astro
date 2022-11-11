@@ -4,7 +4,7 @@ const {title} = Astro.props;
 import 'animate.css';
 ---
 
-<section class="animate__animated animate__fadeInDown">
+<section class="animate__animated animate__fadeInLeft">
     <Button class="button" name="REGRESAR"></Button>
     <div class="content-wrapper">
         <h1 class="title">{title}</h1>
@@ -19,8 +19,8 @@ import 'animate.css';
     let section = document.querySelector('section');
     let imageWrapper = document.querySelector('.img-wrapper');
 	goBtn?.addEventListener('click', ()=>{
-		section?.classList.add('animate__animated', 'animate__fadeOutUpBig');
-		imageWrapper?.classList.add('animate__animated', 'animate__fadeOutDownBig');
+		section?.classList.add('animate__animated', 'animate__fadeOutRight');
+		imageWrapper?.classList.add('animate__animated', 'animate__fadeOutLeft');
 		element?.addEventListener('animationend', () => {
 		    window.location.href = '/landing-page-peru/';
 		});
