@@ -5,7 +5,7 @@ import 'animate.css';
 ---
 
 <section class="animate__animated animate__fadeInDown">
-    <Button class="button" name="INICIO"></Button>
+    <Button class="button" name="REGRESAR"></Button>
     <div class="content-wrapper">
         <h1 class="title">{title}</h1>
         <p class="text">
@@ -22,7 +22,7 @@ import 'animate.css';
 		section?.classList.add('animate__animated', 'animate__fadeOutUpBig');
 		imageWrapper?.classList.add('animate__animated', 'animate__fadeOutDownBig');
 		element?.addEventListener('animationend', () => {
-		    window.location.href = '/landing-page-peru';
+		    window.location.href = '/landing-page-peru/';
 		});
         
 	})
@@ -35,15 +35,16 @@ import 'animate.css';
         padding: 4em;
         justify-self: end;
         display: grid;
-        grid-template-rows: min-content auto;
+        grid-template-rows: auto min-content ;
     }
 
     .button {
-        grid-row: 1;
+
     }
 
     .content-wrapper {
         align-self: center;
+        grid-row: 1;
     }
 
     .text {
@@ -52,13 +53,13 @@ import 'animate.css';
         font-family: 'Merriweather';
         font-size: 1.7em;
         color: #695A43;
-        grid-row: 3;
         margin: 0;
         display: block;
+        font-weight: 300;
     }
 
     .title {
-        color: #413421;
+        color: #63432e;
         font-size: 3.4em;
         font-weight: 400;
         margin-top: 0.5em;
