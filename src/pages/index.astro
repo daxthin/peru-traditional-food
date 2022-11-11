@@ -1,0 +1,91 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/button.astro';
+import 'animate.css';
+import { callGetStaticPaths } from 'astro/dist/core/render/route-cache';
+---
+
+<Layout title="Perú - Platos tradicionales">
+	<main>
+		<div class="bg-text animate__animated animate__fadeInLeft">PERÚ</div>
+		<header>
+			<h1 class="title animate__animated animate__fadeInRight">NUESTROS MEJORES PLATOS</h1>
+			<!-- <a class="button animate__animated animate__fadeInUpBig" href="/dishes/">VER PLATOS</a> -->
+			<div class="button animate__animated animate__fadeInUpBig">
+				<Button name="VER PLATOS" href="/dishes/"></Button>
+			</div>
+		</header>
+	</main>
+	<script>
+		let goBtn = document.querySelector('.button');
+		let bgText = document.querySelector('.bg-text');
+		let title = document.querySelector('.title');
+	
+		goBtn?.addEventListener('click', ()=>{
+			bgText?.classList.replace('animate__fadeInLeft', 'animate__fadeOutRight');
+			title?.classList.replace('animate__fadeInRight', 'animate__fadeOutLeft');
+			goBtn?.classList.replace('animate__fadeInUpBig', 'animate__fadeOutDownBig');
+			element?.addEventListener('animationend', () => {
+				window.location.href = '/dishes/';
+			});
+		})
+	
+		const element = document.querySelector('.title');
+	</script>
+</Layout>
+
+<style>
+	html, body {
+		margin: 0;
+		padding: 0;
+		user-select: none;
+		overflow: hidden;
+	}
+
+	main {
+		background-color: #FFECDE;
+		background: linear-gradient(180deg, #FED2B9 0%, #D9D9D9 100%);
+		font-family: 'Open Sans';
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	header {
+		margin: 0 auto;
+		width: fit-content;
+		height: 100vh;
+		display: grid;
+		grid-template-rows: repeat(3, 1fr);		
+	}
+
+	.bg-text {
+		position: absolute;
+		font-size: 541px;
+		color: transparent;
+		z-index: 0;
+		-webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
+	}
+
+	.title {
+		color: #5F3E20;
+		font-family: 'Merriweather';
+		font-size: 5.7rem;
+		width: 990px;
+		font-weight: 400;
+		text-align: center;
+		align-self: center;
+		margin: 0;
+		z-index: 2;
+		grid-row: 2;
+	}
+
+	div {
+		align-self: center;
+		grid-row: 3;
+		justify-self: center;
+		width: fit-content;
+		height: fit-content;
+	}
+</style>

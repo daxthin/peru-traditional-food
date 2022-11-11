@@ -1,0 +1,98 @@
+---
+import Button from '../components/button.astro'
+const {title} = Astro.props;
+import 'animate.css';
+---
+
+<section class="animate__animated animate__fadeInDown">
+    <Button class="button" name="INICIO"></Button>
+    <div class="content-wrapper">
+        <h1 class="title">{title}</h1>
+        <p class="text">
+            <slot />
+        </p>
+    </div>
+</section>
+
+<script>
+	let goBtn = document.querySelector('.button');
+    let section = document.querySelector('section');
+    let imageWrapper = document.querySelector('.img-wrapper');
+	goBtn?.addEventListener('click', ()=>{
+		section?.classList.add('animate__animated', 'animate__fadeOutUpBig');
+		imageWrapper?.classList.add('animate__animated', 'animate__fadeOutDownBig');
+		element?.addEventListener('animationend', () => {
+		    window.location.href = 'http://localhost:3000';
+		});
+        
+	})
+
+	const element = document.querySelector('section');
+</script>
+
+<style>
+    section {
+        padding: 4em;
+        justify-self: end;
+        display: grid;
+        grid-template-rows: min-content auto;
+    }
+
+    .button {
+        grid-row: 1;
+    }
+
+    .content-wrapper {
+        align-self: center;
+    }
+
+    .text {
+        max-width: 800px;
+		transition: 200ms ease-in-out;
+        font-family: 'Merriweather';
+        font-size: 1.7em;
+        color: #695A43;
+        grid-row: 3;
+        margin: 0;
+        display: block;
+    }
+
+    .title {
+        color: #413421;
+        font-size: 3.4em;
+        font-weight: 400;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        grid-row: 2;
+    }
+
+    @media (min-width: 300px) and (max-width: 1200px) {
+		section {
+            grid-row: 1;
+			grid-column: span 2;
+            justify-self: center;
+            padding: 1em;
+        }
+
+        .text {
+            max-width: 100%;
+            transition: 400ms ease-in-out;
+            font-size: 1.2em;
+        }
+	}
+
+    @media (min-width: 1200px) and (max-width: 1600px)  {
+		section {
+
+        }
+
+        .title {
+            font-size: 2.4em;
+        }
+
+        .text {
+            font-size: 1.4em;
+        }
+	}
+
+</style>

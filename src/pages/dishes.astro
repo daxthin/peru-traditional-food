@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FoodImg from '../components/FoodImg.astro'
+import FoodSection from '../components/FoodSection.astro'
+import 'animate.css';
+---
+
+<Layout title="Platos">
+	<main>
+		<FoodSection title="Ceviche">
+			Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis enim totam accusantium aspernatur nobis quos deserunt, corrupti facilis possimus dicta sint quae distinctio recusandae dolorem, quisquam in minus fugiat! Quam, quae pariatur nihil tempore consectetur sint at eligendi corrupti ipsam similique ipsa perspiciatis dolor in? Laboriosam asperiores ex, fuga quaerat quisquam minus ipsum, esse dolores facere illum praesentium tempore expedita consectetur voluptate sequi perferendis ipsam, itaque architecto molestias hic vitae repellendus necessitatibus alias vel? Minima modi mollitia distinctio! Nihil voluptatem ut in saepe recusandae laudantium consequatur exercitationem excepturi quidem repellendus minus consequuntur esse cumque 
+		</FoodSection>
+		<FoodImg src="/public/img/ceviche-mariscos-tradicional-peru-chiles-garbanzos_127101-189.webp"></FoodImg>
+	</main>
+</Layout>
+
+<style>
+	main {
+		background-color: #FFECDE;
+		background: linear-gradient(180deg, #FED2B9 0%, #D9D9D9 100%);
+		font-family: 'Open Sans';
+		min-height: 100vh;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 2em;
+		/* padding: 4em; */
+		box-sizing: border-box;
+		overflow: hidden;
+	}
+</style>
